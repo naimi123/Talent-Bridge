@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 import React from 'react'
 import GateScreen from './formulaire/GateScreen';
 
@@ -10,4 +9,4 @@ export default function App() {
     </div>
   )
 }
->>>>>>> Login
+

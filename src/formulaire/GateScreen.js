@@ -8,7 +8,7 @@ function GateScreen() {
   const [selectedRole, setSelectedRole] = useState('');
 
   // CRITICAL: true seulement si l'utilisateur a tapé du texte
-  const isCodeEntered = centreCode.trim() !== '';
+  const isCodeEntered = centreCode.trim() == 'znata';
 
   const roles = [
     'Stagiaire',

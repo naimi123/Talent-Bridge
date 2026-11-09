@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './CssFolder/GateScreen.css';
 
-function GateScreen() {
+export default function GateScreen() {
   // État pour le code du centre
   const [centreCode, setCentreCode] = useState('');
   // État pour le rôle choisi (optionnel, simple)
@@ -88,4 +88,3 @@ function GateScreen() {
   );
 }
 
-export default GateScreen;

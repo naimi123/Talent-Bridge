@@ -1,0 +1,205 @@
+/* StagiaireHome.css - Dashboard Stagiaire (TalentBridge) - Premium Dark */
+
+.stagiaire-home {
+  min-height: 100vh;
+  background-color: #0b0f19;
+  color: #f8fafc;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Premium theme (#0D1117, glassmorphism, neon accents) */
+.stagiaire-home.premium-dark {
+  background-color: #0D1117;
+}
+
+/* Fixed / sticky navigation bar */
+.home-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 24px;
+  background: rgba(13, 17, 23, 0.88);
+  border-bottom: 1px solid rgba(30, 41, 59, 1); /* slate-800 feel */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.home-brand {
+  color: #22d3ee;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.home-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home-tab {
+  border: 1px solid rgba(30, 41, 59, 1);
+  background: rgba(15, 23, 42, 0.5);
+  color: rgba(255, 255, 255, 0.78);
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.home-tab:hover {
+  border-color: rgba(34, 211, 238, 0.45);
+  color: #ffffff;
+}
+
+.home-tab.active {
+  background: rgba(6, 182, 212, 0.14);
+  border-color: rgba(34, 211, 238, 0.55);
+  color: #22d3ee;
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.14);
+}
+
+.home-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+  box-sizing: border-box;
+}
+
+/* Shared glassmorphism card (matches requested style) */
+.profile-card,
+.glass-card {
+  background: rgba(15, 23, 42, 0.5); /* bg-slate-900/50 */
+  border: 1px solid rgb(30, 41, 59); /* border-slate-800 */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.28);
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px;
+  border-radius: 18px;
+  margin-bottom: 22px;
+}
+
+.profile-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(34, 211, 238, 0.14);
+  color: #22d3ee;
+  border: 1px solid rgba(34, 211, 238, 0.45);
+  font-size: 1.25rem;
+  font-weight: 800;
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.12);
+}
+
+.profile-info { flex: 1; min-width: 0; }
+.profile-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.profile-name { margin: 0; font-size: 1.45rem; font-weight: 700; color: #ffffff; }
+.profile-group {
+  display: inline-block; padding: 4px 10px; border-radius: 999px;
+  background: rgba(34, 211, 238, 0.12); border: 1px solid rgba(34, 211, 238, 0.28);
+  color: #22d3ee; font-size: 0.82rem; font-weight: 700;
+}
+.profile-level-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 10px; color: rgba(255,255,255,0.72); font-size: 0.9rem; }
+.profile-xp { color: #22d3ee; font-weight: 700; white-space: nowrap; }
+.progress-track { width: 100%; height: 10px; margin-top: 8px; border-radius: 999px; background: rgba(255,255,255,0.08); overflow: hidden; border: 1px solid rgba(30,41,59,0.8); }
+.progress-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #06b6d4, #6366f1); box-shadow: 0 0 12px rgba(6,182,212,0.45); }
+
+.actions-section-title { margin: 0 0 14px; font-size: 1.1rem; font-weight: 700; color: #ffffff; }
+.section-subtitle { margin: -6px 0 14px; color: rgba(148, 163, 184, 0.95); font-size: 0.9rem; }
+.actions-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.action-card {
+  display: flex; align-items: flex-start; gap: 14px; width: 100%; text-align: left; padding: 18px; border-radius: 16px;
+  background: rgba(15, 23, 42, 0.5); border: 1px solid rgb(30, 41, 59); color: inherit; cursor: pointer;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+}
+.action-card:hover { transform: translateY(-3px); border-color: rgba(34, 211, 238, 0.45); box-shadow: 0 0 18px rgba(6,182,212,0.16), 0 10px 24px rgba(0,0,0,0.22); background: rgba(15,23,42,0.72); }
+.action-icon { width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: rgba(34,211,238,0.1); border: 1px solid rgba(34,211,238,0.22); color: #22d3ee; font-size: 1.25rem; }
+.action-content h3 { margin: 0 0 4px; font-size: 1rem; font-weight: 700; color: #ffffff; }
+.action-content p { margin: 0; font-size: 0.88rem; line-height: 1.4; color: rgba(148,163,184,0.95); }
+
+/* Classement & Career Quest */
+.career-header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.rank-pill { padding: 6px 12px; border-radius: 999px; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.35); color: #34d399; font-size: 0.82rem; font-weight: 700; }
+.employability-card { border-radius: 18px; padding: 20px; }
+.employability-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.card-title { margin: 0; font-size: 1.05rem; font-weight: 700; color: #fff; }
+.card-muted { margin: 4px 0 0; color: rgba(148,163,184,0.95); font-size: 0.88rem; }
+.trend-badge { padding: 6px 10px; border-radius: 10px; background: linear-gradient(90deg, rgba(6,182,212,0.18), rgba(99,102,241,0.18)); border: 1px solid rgba(99,102,241,0.35); color: #a5b4fc; font-weight: 800; font-size: 0.9rem; box-shadow: 0 0 14px rgba(99,102,241,0.18); }
+
+/* Animated sparkline / momentum indicator */
+.sparkline-wrap { position: relative; margin-top: 14px; border-radius: 14px; background: rgba(2,6,23,0.35); border: 1px solid rgba(30,41,59,0.9); overflow: hidden; }
+.sparkline-svg { display: block; width: 100%; height: 140px; }
+.sparkline-path { stroke-dasharray: 900; stroke-dashoffset: 900; animation: sparkDraw 1.6s ease forwards; }
+.sparkline-pulse { animation: sparkPulse 1.8s ease-in-out infinite; transform-origin: 600px 14px; }
+.sparkline-pulse-ring {
+  position: absolute; right: 10px; top: 8px; width: 18px; height: 18px; border-radius: 50%;
+  border: 2px solid rgba(99,102,241,0.7); animation: ringPulse 1.8s ease-out infinite; pointer-events: none;
+}
+@keyframes sparkDraw { to { stroke-dashoffset: 0; } }
+@keyframes sparkPulse { 0%,100% { opacity: 0.75; transform: scale(0.9); } 50% { opacity: 1; transform: scale(1.15); } }
+@keyframes ringPulse { 0% { transform: scale(0.6); opacity: 0.8; } 100% { transform: scale(2.2); opacity: 0; } }
+
+/* Milestone tracker */
+.milestone-card { margin-top: 14px; padding: 14px; border-radius: 14px; background: rgba(2,6,23,0.35); border: 1px solid rgba(30,41,59,0.9); }
+.milestone-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.milestone-label { color: rgba(148,163,184,0.95); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+.milestone-value { color: #e2e8f0; font-size: 0.9rem; font-weight: 600; }
+.milestone-track { height: 10px; border-radius: 999px; background: rgba(255,255,255,0.08); overflow: hidden; }
+.milestone-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #06b6d4, #6366f1); box-shadow: 0 0 14px rgba(6,182,212,0.35); transition: width 0.6s ease; }
+
+/* Motivational Dynamic Badge / Daily Quote */
+.motivation-banner {
+  margin-top: 14px; display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-radius: 14px;
+  background: linear-gradient(90deg, rgba(6,182,212,0.12), rgba(99,102,241,0.10), rgba(16,185,129,0.08));
+  border: 1px solid rgba(34,211,238,0.28);
+  box-shadow: 0 0 22px rgba(6,182,212,0.12), inset 0 0 24px rgba(99,102,241,0.05);
+  animation: motivationGlow 3s ease-in-out infinite;
+}
+.motivation-dot { width: 10px; height: 10px; margin-top: 5px; border-radius: 50%; flex-shrink: 0; background: #34d399; box-shadow: 0 0 10px rgba(52,211,153,0.8); animation: dotBlink 1.6s ease-in-out infinite; }
+.motivation-text { margin: 0; color: #e6fffb; font-size: 0.95rem; line-height: 1.45; font-weight: 600; }
+@keyframes motivationGlow { 0%,100% { box-shadow: 0 0 18px rgba(6,182,212,0.10), inset 0 0 24px rgba(99,102,241,0.04); } 50% { box-shadow: 0 0 28px rgba(6,182,212,0.18), inset 0 0 28px rgba(99,102,241,0.08); } }
+@keyframes dotBlink { 0%,100% { opacity: 0.7; transform: scale(0.9); } 50% { opacity: 1; transform: scale(1.15); } }
+
+.quest-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; margin-top: 14px; }
+.mini-quest { border-radius: 14px; padding: 16px; }
+.mini-quest h4 { margin: 0 0 6px; color: #fff; font-size: 0.98rem; }
+.mini-quest p { margin: 0; color: rgba(148,163,184,0.95); font-size: 0.88rem; line-height: 1.4; }
+.accent-cyan { color: #22d3ee; font-weight: 700; }
+.accent-emerald { color: #34d399; font-weight: 700; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .home-navbar { flex-direction: column; align-items: stretch; padding: 12px 16px; }
+  .home-brand { text-align: center; }
+}
+@media (max-width: 720px) {
+  .actions-grid, .quest-grid { grid-template-columns: 1fr; }
+  .profile-card { flex-direction: column; align-items: flex-start; }
+  .profile-top { width: 100%; }
+  .home-container { padding: 18px 14px 32px; }
+}
+@media (max-width: 480px) {
+  .home-tab { padding: 8px 11px; font-size: 0.84rem; }
+  .profile-name { font-size: 1.25rem; }
+  .employability-card { padding: 16px; }
+}

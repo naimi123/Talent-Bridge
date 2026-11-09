@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './CssFolder/GateScreen.css';
 
 export default function GateScreen() {
@@ -6,9 +7,10 @@ export default function GateScreen() {
   const [centreCode, setCentreCode] = useState('');
   // État pour le rôle choisi (optionnel, simple)
   const [selectedRole, setSelectedRole] = useState('');
+  const navigate = useNavigate();
 
-  // CRITICAL: true seulement si l'utilisateur a tapé du texte
-  const isCodeEntered = centreCode.trim() == 'znata';
+  // Code du centre requis (comportement actuel du projet)
+  const isCodeEntered = centreCode.trim() === 'znata';
 
   const roles = [
     'Stagiaire',
@@ -23,9 +25,15 @@ export default function GateScreen() {
   }
 
   function handleRoleClick(role) {
-    // Sécurité: ne rien faire si le code est vide
+    // Déclencher uniquement si le code du centre est entré/valide
     if (!isCodeEntered) return;
+
     setSelectedRole(role);
+
+    // Redirection vers le formulaire d'inscription Stagiaire
+    if (role === 'Stagiaire' || role === 'Stagiraire') {
+      navigate('/register/stagiaire');
+    }
   }
 
   return (
@@ -71,7 +79,7 @@ export default function GateScreen() {
                 onClick={function () {
                   handleRoleClick(role);
                 }}
-                disabled={!isCodeEntered}
+                
               >
                 <span>{role}</span>
                 <span aria-hidden="true">&gt;</span>
@@ -87,4 +95,3 @@ export default function GateScreen() {
     </div>
   );
 }
-

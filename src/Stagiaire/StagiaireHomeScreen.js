@@ -27,7 +27,7 @@ function StagiaireHomeScreen() {
     },
     {
       id: 4,
-      icon: '🏆',
+      
       title: 'Classement & Career Quest',
       description: 'Leaderboard, quêtes, badges',
     },
@@ -50,9 +50,9 @@ function StagiaireHomeScreen() {
 
   const motivationalMessage = useMemo(function () {
     if (progressPercent >= 80) {
-      return `🚀 Great consistency, ${studentName}! Your employability curve is trending upward by +${employabilityTrend}%.`;
+      return ` Great consistency, ${studentName}! Your employability curve is trending upward by +${employabilityTrend}%.`;
     }
-    return `🔥 You're ${stepsToReady} steps away from industry-ready level this week!`;
+    return ` You're ${stepsToReady} steps away from industry-ready level this week!`;
   }, [progressPercent, studentName, employabilityTrend, stepsToReady]);
 
   function renderContent() {

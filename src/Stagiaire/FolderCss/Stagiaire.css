@@ -137,6 +137,87 @@
   transform: none;
 }
 
+/* --- AI Gesture Control panel --- */
+.gesture-control-panel {
+  margin: 0 0 18px;
+  padding: 12px;
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(11, 15, 25, 0.45);
+}
+
+.gesture-control-header {
+  display: flex;
+  justify-content: center;
+}
+
+.gesture-toggle-btn {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  border-radius: 10px;
+  background: rgba(18, 26, 43, 0.8);
+  color: #e6faff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.gesture-toggle-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.2);
+}
+
+.gesture-toggle-btn.active {
+  border-color: #34d399;
+  background: linear-gradient(135deg, #16a34a 0%, #22c55e 60%, #4ade80 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.25);
+}
+
+.gesture-status {
+  margin: 10px 0 0;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+}
+
+.gesture-error {
+  margin: 6px 0 0;
+  font-size: 0.8rem;
+  color: #ff8a8a;
+  text-align: center;
+}
+
+.gesture-preview {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.gesture-video {
+  display: none; /* MediaPipe Camera source; canvas is the visible preview */
+}
+
+.gesture-canvas {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #0b0f19;
+}
+
+.gesture-hint {
+  margin: 0;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
 @media (max-width: 480px) {
   .stagiaire-card {
     padding: 22px 16px;

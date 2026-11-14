@@ -161,7 +161,7 @@ export default function CommunityScreen() {
 
   const handleVideoMode = () => {
     setComposerMode((prev) => (prev === 'video' ? 'none' : 'video'));
-    setComposerNotice('Mode caméra IA activé : caméra prête automatiquement. ✋/✊ pour démarrer, ✌️/👍 pour arrêter et attacher la vidéo.');
+    setComposerNotice('Mode caméra IA activé : caméra prête automatiquement. ✌️ pour démarrer (REC 🔴), 👍 pour arrêter et attacher la vidéo.');
   };
 
   const handleRecordedVideo = ({ url, file, mimeType }) => {
@@ -346,8 +346,8 @@ export default function CommunityScreen() {
             <GestureVideoRecorder
               title="Caméra IA mains libres (Communauté)"
               subtitle="Détection continue : la caméra s’active automatiquement pour enregistrer sans souris ni clavier."
-              startGestures={['fist', 'open_palm']}
-              stopGestures={['peace', 'thumbs_up']}
+              startGestures={['peace']}
+              stopGestures={['thumbs_up']}
               continuous
               autoEnable
               showPreview={false}
@@ -355,7 +355,7 @@ export default function CommunityScreen() {
               onRecordingComplete={handleRecordedVideo}
             />
             <p className="gesture-mapping-note">
-              Gestes configurés : <strong>✊ / ✋ Démarrer l’enregistrement</strong> · <strong>✌️ / 👍 Arrêter et attacher la vidéo</strong>
+              Gestes configurés : <strong>✌️ Démarrer l’enregistrement (REC 🔴)</strong> · <strong>👍 Arrêter et attacher la vidéo</strong>
             </p>
           </div>
         ) : null}

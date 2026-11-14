@@ -28,10 +28,13 @@ import './AIHandControl.css';
  *   Then replace the CDN loader with imports and configure locateFile for local assets as needed.
  */
 
+const MEDIAPIPE_VERSION = '0.4.1646424915';
+const MEDIAPIPE_CAMERA_UTILS_VERSION = '0.3.1640029074';
+const MEDIAPIPE_DRAWING_UTILS_VERSION = '0.3.1620248257';
 const MEDIAPIPE_SCRIPTS = [
-  'https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js',
-  'https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js',
-  'https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js',
+  `https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@${MEDIAPIPE_CAMERA_UTILS_VERSION}/camera_utils.js`,
+  `https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@${MEDIAPIPE_DRAWING_UTILS_VERSION}/drawing_utils.js`,
+  `https://cdn.jsdelivr.net/npm/@mediapipe/hands@${MEDIAPIPE_VERSION}/hands.js`,
 ];
 
 function loadScript(src) {
@@ -279,7 +282,7 @@ export default function AIHandControl() {
         if (!window.Camera) throw new Error('MediaPipe Camera utils unavailable (window.Camera missing).');
 
         const hands = new window.Hands({
-          locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`,
+          locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands@${MEDIAPIPE_VERSION}/${file}`,
         });
 
         hands.setOptions({

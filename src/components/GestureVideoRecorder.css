@@ -1,0 +1,400 @@
+.gesture-recorder-card {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(34, 211, 238, 0.18);
+  background: linear-gradient(180deg, rgba(8, 47, 73, 0.22), rgba(15, 23, 42, 0.35));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.gesture-recorder-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.gesture-recorder-title {
+  margin: 0;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.gesture-recorder-subtitle {
+  margin: 4px 0 0;
+  color: rgba(148, 163, 184, 0.95);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.ai-hand-badge-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(15, 23, 42, 0.65);
+  color: #e2e8f0;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.ai-hand-badge-toggle:hover {
+  border-color: rgba(34, 211, 238, 0.45);
+  color: #fff;
+}
+
+.ai-hand-badge-toggle.on {
+  border-color: rgba(34, 211, 238, 0.5);
+  background: linear-gradient(90deg, rgba(6, 182, 212, 0.18), rgba(16, 185, 129, 0.16));
+  color: #cffafe;
+  box-shadow: 0 0 14px rgba(34, 211, 238, 0.12);
+}
+
+.ai-hand-badge-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #64748b;
+  box-shadow: 0 0 0 0 rgba(100, 116, 139, 0.5);
+}
+
+.ai-hand-badge-toggle.on .ai-hand-badge-dot {
+  background: #22d3ee;
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.15);
+}
+
+.gesture-recorder-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.recording-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(51, 65, 85, 0.9);
+  background: rgba(2, 6, 23, 0.35);
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.recording-indicator.live {
+  border-color: rgba(248, 113, 113, 0.45);
+  background: rgba(127, 29, 29, 0.25);
+  color: #fecaca;
+}
+
+.recording-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #64748b;
+}
+
+.recording-indicator.live .recording-dot {
+  background: #ef4444;
+  box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  animation: recPulse 1.2s infinite;
+}
+
+@keyframes recPulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6); }
+  70% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.gesture-chip {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(51, 65, 85, 0.9);
+  background: rgba(2, 6, 23, 0.35);
+  color: rgba(226, 232, 240, 0.92);
+  font-size: 0.82rem;
+}
+
+.gesture-chip strong { color: #67e8f9; }
+
+.gesture-live-banner {
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(34, 211, 238, 0.28);
+  background: linear-gradient(90deg, rgba(6, 182, 212, 0.12), rgba(16, 185, 129, 0.08));
+  color: #ecfeff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gesture-live-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #64748b;
+  flex-shrink: 0;
+}
+
+.gesture-live-dot.ready {
+  background: #22d3ee;
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.15);
+}
+
+.gesture-live-dot.recording {
+  background: #ef4444;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.18);
+}
+
+.gesture-mapping-hints {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: rgba(148, 163, 184, 0.95);
+  font-size: 0.82rem;
+}
+
+.gesture-mapping-hints strong {
+  color: #e2e8f0;
+}
+
+.gesture-feedback-banner,
+.gesture-error-banner {
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.gesture-feedback-banner {
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  background: rgba(6, 182, 212, 0.12);
+  color: #cffafe;
+}
+
+.gesture-error-banner {
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  background: rgba(127, 29, 29, 0.2);
+  color: #fecaca;
+}
+
+.gesture-recorder-body {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 14px;
+}
+
+.gesture-preview-panel,
+.gesture-output-panel {
+  min-width: 0;
+}
+
+.gesture-preview-frame {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(30, 41, 59, 0.9);
+  background: #020617;
+  aspect-ratio: 4 / 3;
+}
+
+.gesture-video-source {
+  display: none;
+}
+
+.gesture-canvas-preview {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.gesture-preview-placeholder {
+  height: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  color: rgba(203, 213, 225, 0.95);
+  background: radial-gradient(circle at top, rgba(6, 182, 212, 0.08), rgba(2, 6, 23, 0.8));
+}
+
+.gesture-preview-placeholder p { margin: 0; font-size: 0.9rem; }
+.gesture-preview-placeholder ul { margin: 0; padding-left: 18px; color: rgba(148, 163, 184, 0.95); }
+.gesture-preview-placeholder li { margin: 4px 0; font-size: 0.85rem; }
+
+.live-recording-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(220, 38, 38, 0.9);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  box-shadow: 0 8px 18px rgba(220, 38, 38, 0.25);
+}
+
+.gesture-status-text {
+  margin: 8px 0 0;
+  color: rgba(148, 163, 184, 0.95);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.gesture-manual-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.gesture-action-btn {
+  border: 1px solid rgba(51, 65, 85, 0.95);
+  background: rgba(15, 23, 42, 0.55);
+  color: #e2e8f0;
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gesture-action-btn:hover:not(:disabled) {
+  border-color: rgba(34, 211, 238, 0.4);
+  color: #fff;
+}
+
+.gesture-action-btn.start:not(:disabled) {
+  border-color: rgba(52, 211, 153, 0.35);
+  background: rgba(16, 185, 129, 0.12);
+  color: #d1fae5;
+}
+
+.gesture-action-btn.stop:not(:disabled) {
+  border-color: rgba(251, 191, 36, 0.35);
+  background: rgba(251, 191, 36, 0.1);
+  color: #fde68a;
+}
+
+.gesture-action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.gesture-output-panel {
+  border-radius: 14px;
+  border: 1px solid rgba(30, 41, 59, 0.9);
+  background: rgba(2, 6, 23, 0.25);
+  padding: 12px;
+}
+
+.gesture-output-title {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.gesture-recorded-video {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(30, 41, 59, 0.9);
+  background: #020617;
+  aspect-ratio: 16 / 9;
+}
+
+.gesture-output-actions {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.gesture-download-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #022c22;
+  background: linear-gradient(90deg, #22d3ee, #34d399);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+}
+
+.gesture-download-link:hover { filter: brightness(1.05); }
+
+.gesture-mime-note {
+  color: rgba(148, 163, 184, 0.9);
+  font-size: 0.78rem;
+}
+
+.gesture-output-empty {
+  height: calc(100% - 28px);
+  min-height: 180px;
+  border-radius: 10px;
+  border: 1px dashed rgba(71, 85, 105, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 14px;
+  color: rgba(148, 163, 184, 0.95);
+}
+
+.gesture-output-empty p { margin: 0; }
+.gesture-output-hint { margin-top: 6px !important; font-size: 0.83rem; }
+
+@media (max-width: 980px) {
+  .gesture-recorder-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .gesture-recorder-card {
+    padding: 14px;
+  }
+
+  .gesture-recorder-header,
+  .gesture-recorder-status-row,
+  .gesture-manual-actions,
+  .gesture-output-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ai-hand-badge-toggle,
+  .gesture-action-btn,
+  .gesture-download-link {
+    width: 100%;
+    justify-content: center;
+  }
+}

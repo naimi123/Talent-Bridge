@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
-import GateScreen from './Formulaire/GateScreen';
+import GateScreen from './formulaire/GateScreen';
 import Stagire from './Stagiaire/Stagire';
 import StagiaireLayout from './Stagiaire/StagiaireLayout';
 import StagiaireHomeScreen from './Stagiaire/StagiaireHomeScreen';
@@ -11,6 +11,7 @@ import SkillMatchScreen from './Stagiaire/SkillMatchScreen';
 import LeaderboardScreen from './Stagiaire/LeaderboardScreen';
 import CommunityScreen from './Stagiaire/CommunityScreen';
 import AIHandControl from './components/AIHandControl';
+
 
 export default function App() {
   return (
